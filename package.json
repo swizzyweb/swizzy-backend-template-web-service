@@ -1,0 +1,27 @@
+{
+  "name": "@swizzyweb/swizzy-backend-template-web-service",
+  "version": "0.1.0",
+  "description": "Template for swizzyweb backend web services",
+  "main": "dist/app.js",
+  "author": "Jason Gallagher",
+  "scripts": {
+    "dev": "npm run build && npm run server",
+    "server": "swerve",
+    "build:service": "tsc",
+    "build": "npm run build:service"
+  },
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "license": "GPL-3.0-only",
+  "devDependencies": {
+    "@swizzyweb/swerve": "^0.3.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@swizzyweb/express": "^4.19.2",
+    "@swizzyweb/swizzy-common": "^0.2.7",
+    "@swizzyweb/swizzy-web-service": "^0.4.3"
+  }
+}
