@@ -1,2 +1,2 @@
-export * from "./funny-joke-client";
-export * from "./weather-client";
+export * from "./funny-joke-client.js";
+export * from "./weather-client.js";

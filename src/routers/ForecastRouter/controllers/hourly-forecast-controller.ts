@@ -8,10 +8,10 @@ import {
   WebController,
   WebControllerFunction,
 } from "@swizzyweb/swizzy-web-service";
-import { ForecastRouterState } from "../forecast-router";
+import { ForecastRouterState } from "../forecast-router.js";
 // @ts-ignore
 import { Request, Response, NextFunction, json } from "@swizzyweb/express";
-import { IWeatherClient } from "../../../client";
+import { IWeatherClient } from "../../../client/index.js";
 
 export interface HourlyForecastControllerState {
   weatherClient: IWeatherClient;

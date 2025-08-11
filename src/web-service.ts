@@ -5,12 +5,12 @@ import {
   SwizzyRequestMiddleware,
   WebService,
 } from "@swizzyweb/swizzy-web-service";
-import { FunnyWebRouter } from "./routers/FunnyRouter/funny-router";
-import { IFunnyJokeClient } from "./client";
-import { IWeatherClient } from "./client/weather-client";
-import { ForecastWebRouter } from "./routers/ForecastRouter/forecast-router";
-import { StatisticsWebRouter } from "./routers/StatisticsRouter/statistics-router";
-import { MessageWebRouter } from "./routers/MessageRouter/message-router";
+import { FunnyWebRouter } from "./routers/FunnyRouter/funny-router.js";
+import { IFunnyJokeClient } from "./client/index.js";
+import { IWeatherClient } from "./client/weather-client.js";
+import { ForecastWebRouter } from "./routers/ForecastRouter/forecast-router.js";
+import { StatisticsWebRouter } from "./routers/StatisticsRouter/statistics-router.js";
+import { MessageWebRouter } from "./routers/MessageRouter/message-router.js";
 
 export interface SampleBackendWebServiceState {
   funnyJokeClient: IFunnyJokeClient;

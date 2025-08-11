@@ -6,7 +6,7 @@ import {
   WebController,
   WebControllerFunction,
 } from "@swizzyweb/swizzy-web-service";
-import { StatisticsRouterState } from "../statistics-router";
+import { StatisticsRouterState } from "../statistics-router.js";
 // @ts-ignore
 import { Request, Response } from "@swizzyweb/express";
 

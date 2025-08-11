@@ -7,10 +7,10 @@ import {
   SwizzyRequestMiddleware,
   WebRouter,
 } from "@swizzyweb/swizzy-web-service";
-import { SampleBackendWebServiceState } from "../../web-service";
-import { SendMessageController } from "./controllers/send-message-controller";
-import { GetMessageController } from "./controllers/get-message-controller";
-import { DeleteMessageController } from "./controllers/delete-message-controller";
+import { SampleBackendWebServiceState } from "../../web-service.js";
+import { SendMessageController } from "./controllers/send-message-controller.js";
+import { GetMessageController } from "./controllers/get-message-controller.js";
+import { DeleteMessageController } from "./controllers/delete-message-controller.js";
 
 export interface MessageRouterState {
   messageStore: Map<String, String>;

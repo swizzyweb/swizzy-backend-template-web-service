@@ -7,9 +7,9 @@ import {
   SwizzyRequestMiddleware,
   WebRouter,
 } from "@swizzyweb/swizzy-web-service";
-import { SampleBackendWebServiceState } from "../../web-service";
-import { FunnyJokeController } from "./controllers/funny-joke-controller";
-import { IFunnyJokeClient } from "../../client";
+import { SampleBackendWebServiceState } from "../../web-service.js";
+import { FunnyJokeController } from "./controllers/funny-joke-controller.js";
+import { IFunnyJokeClient } from "../../client/index.js";
 export interface FunnyRouterState {
   funnyJokeClient: IFunnyJokeClient;
 }

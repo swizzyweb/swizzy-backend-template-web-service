@@ -1,6 +1,6 @@
-import { FunnyJokeClient } from "./client";
-import { OpenMeteoWeatherClient } from "./client/weather-client";
-import { SampleBackendWebService } from "./web-service";
+import { FunnyJokeClient } from "./client/index.js";
+import { OpenMeteoWeatherClient } from "./client/weather-client.js";
+import { SampleBackendWebService } from "./web-service.js";
 
 export interface GetSampleFrontendWebserviceProps {
   serviceArgs: {

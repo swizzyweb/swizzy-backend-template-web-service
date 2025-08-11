@@ -7,8 +7,8 @@ import {
   SwizzyRequestMiddleware,
   WebRouter,
 } from "@swizzyweb/swizzy-web-service";
-import { SampleBackendWebServiceState } from "../../web-service";
-import { UpTimeController } from "./controllers/uptime-controller";
+import { SampleBackendWebServiceState } from "../../web-service.js";
+import { UpTimeController } from "./controllers/uptime-controller.js";
 export interface StatisticsRouterState {
   serverStartTime: number;
 }

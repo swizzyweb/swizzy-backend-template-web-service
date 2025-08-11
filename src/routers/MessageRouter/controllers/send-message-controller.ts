@@ -8,7 +8,7 @@ import {
   WebController,
   WebControllerFunction,
 } from "@swizzyweb/swizzy-web-service";
-import { MessageRouterState } from "../message-router";
+import { MessageRouterState } from "../message-router.js";
 // @ts-ignore
 import { Request, Response, NextFunction, json } from "@swizzyweb/express";
 

@@ -7,12 +7,12 @@ import {
   SwizzyRequestMiddleware,
   WebRouter,
 } from "@swizzyweb/swizzy-web-service";
-import { SampleBackendWebServiceState } from "../../web-service";
+import { SampleBackendWebServiceState } from "../../web-service.js";
 import path from "path";
 // @ts-ignore
 import express from "@swizzyweb/express";
-import { IFunnyJokeClient, IWeatherClient } from "../../client";
-import { HourlyForecastController } from "./controllers/hourly-forecast-controller";
+import { IFunnyJokeClient, IWeatherClient } from "../../client/index.js";
+import { HourlyForecastController } from "./controllers/hourly-forecast-controller.js";
 export interface ForecastRouterState {
   weatherClient: IWeatherClient;
 }
