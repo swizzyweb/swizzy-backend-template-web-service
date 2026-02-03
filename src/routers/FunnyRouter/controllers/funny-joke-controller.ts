@@ -7,8 +7,7 @@ import {
   WebControllerFunction,
 } from "@swizzyweb/swizzy-web-service";
 import { FunnyRouterState } from "../funny-router.js";
-// @ts-ignore
-import { Request, Response } from "@swizzyweb/express";
+import { Request, Response } from "express";
 import { IFunnyJokeClient } from "../../../client/index.js";
 
 export interface FunnyJokeControllerState {

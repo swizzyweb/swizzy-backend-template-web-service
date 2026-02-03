@@ -9,8 +9,7 @@ import {
   WebControllerFunction,
 } from "@swizzyweb/swizzy-web-service";
 import { ForecastRouterState } from "../forecast-router.js";
-// @ts-ignore
-import { Request, Response, NextFunction, json } from "@swizzyweb/express";
+import { Request, Response, NextFunction, json } from "express";
 import { IWeatherClient } from "../../../client/index.js";
 
 export interface HourlyForecastControllerState {
@@ -59,7 +58,10 @@ export class HourlyForecastController extends WebController<
       action: "hourly",
       method: RequestMethod.post,
       stateConverter: DefaultStateExporter,
-      middleware: [json, HourlyForecaseValidationMiddleware],
+      middleware: [
+        (props: SwizzyMiddlewareProps<HourlyForecastControllerState>) => json(),
+        HourlyForecaseValidationMiddleware,
+      ],
     });
   }
 

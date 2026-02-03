@@ -9,8 +9,7 @@ import {
   WebControllerFunction,
 } from "@swizzyweb/swizzy-web-service";
 import { MessageRouterState } from "../message-router.js";
-// @ts-ignore
-import { Request, Response, NextFunction, json } from "@swizzyweb/express";
+import { Request, Response, NextFunction, json } from "express";
 
 export interface SendMessageControllerState {
   messageStore: Map<String, String>;
@@ -30,7 +29,10 @@ export class SendMessageController extends WebController<
       action: "send",
       method: RequestMethod.put,
       stateConverter: DefaultStateExporter,
-      middleware: [json, SendMessageValidationMiddleware],
+      middleware: [
+        (props: SwizzyMiddlewareProps<SendMessageControllerState>) => json(),
+        SendMessageValidationMiddleware,
+      ],
     });
   }
 

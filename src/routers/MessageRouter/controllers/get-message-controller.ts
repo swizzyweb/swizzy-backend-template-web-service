@@ -9,8 +9,7 @@ import {
   WebControllerFunction,
 } from "@swizzyweb/swizzy-web-service";
 import { MessageRouterState } from "../message-router.js";
-// @ts-ignore
-import { Request, Response, NextFunction } from "@swizzyweb/express";
+import { Request, Response, NextFunction } from "express";
 
 export interface GetMessageControllerState {
   messageStore: Map<String, String>;
@@ -41,10 +40,10 @@ export class GetMessageController extends WebController<
   ): Promise<WebControllerFunction> {
     const logger = this.logger;
     const getState = this.getState.bind(this);
-    return async function (req: GetMessageRequest, res: Response) {
+    return async function (req: Request, res: Response) {
       try {
         const { messageStore } = getState()!;
-        const { messageId } = req.query;
+        const { messageId } = (req as GetMessageRequest).query;
         logger.info(`Received request for message ${messageId}`);
         const message = messageStore.get(messageId);
         if (!message) {

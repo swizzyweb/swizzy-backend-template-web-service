@@ -7,8 +7,7 @@ import {
   WebControllerFunction,
 } from "@swizzyweb/swizzy-web-service";
 import { StatisticsRouterState } from "../statistics-router.js";
-// @ts-ignore
-import { Request, Response } from "@swizzyweb/express";
+import { Request, Response } from "express";
 
 export interface UpTimeControllerState {
   serverStartTime: number;

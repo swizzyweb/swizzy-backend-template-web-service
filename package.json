@@ -1,6 +1,6 @@
 {
   "name": "@swizzyweb/swizzy-backend-template-web-service",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Template for swizzyweb backend web services",
   "main": "dist/app.js",
   "type": "module",
@@ -15,14 +15,15 @@
     "react",
     "typescript"
   ],
-  "license": "GPL-3.0-only",
+  "license": "MIT",
   "devDependencies": {
-    "@swizzyweb/swerve": "^0.5.4",
+    "@swizzyweb/swerve": "^0.6.2",
+    "@types/express": "^5.0.6",
+    "express": "^5.2.1",
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@swizzyweb/express": "^4.19.2",
-    "@swizzyweb/swizzy-common": "^0.3.2",
-    "@swizzyweb/swizzy-web-service": "^0.5.3"
+    "@swizzyweb/swizzy-common": "^0.3.3",
+    "@swizzyweb/swizzy-web-service": "^0.6.1"
   }
 }
