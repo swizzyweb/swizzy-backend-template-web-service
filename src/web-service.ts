@@ -1,42 +1,26 @@
-import {
-  IWebServiceProps,
-  RequestIdMiddleware,
-  RequestLoggerMiddleware,
-  SwizzyRequestMiddleware,
-  WebService,
-} from "@swizzyweb/swizzy-web-service";
-import { FunnyWebRouter } from "./routers/FunnyRouter/funny-router.js";
-import { IFunnyJokeClient } from "./client/index.js";
-import { IWeatherClient } from "./client/weather-client.js";
-import { ForecastWebRouter } from "./routers/ForecastRouter/forecast-router.js";
-import { StatisticsWebRouter } from "./routers/StatisticsRouter/statistics-router.js";
-import { MessageWebRouter } from "./routers/MessageRouter/message-router.js";
+import { IWebServiceProps, WebService } from "@swizzyweb/swizzy-web-service";
+import { HelloWebRouter } from "./routers/HelloRouter/hello-router.js";
 
-export interface SampleBackendWebServiceState {
-  funnyJokeClient: IFunnyJokeClient;
-  weatherClient: IWeatherClient;
-  serverStartTime: number;
-  messageStore: Map<string, string>;
+
+export interface SwizzyBackendTemplateWebServiceState {
+
 }
 
-export interface SampleBackendWebServiceProps
-  extends IWebServiceProps<SampleBackendWebServiceState> {
+export interface SwizzyBackendTemplateWebServiceProps extends IWebServiceProps<SwizzyBackendTemplateWebServiceState> {
   port: number;
   path?: string;
 }
 
-export class SampleBackendWebService extends WebService<SampleBackendWebServiceState> {
-  constructor(props: SampleBackendWebServiceProps) {
+export class SwizzyBackendTemplateWebService extends WebService<SwizzyBackendTemplateWebServiceState> {
+  constructor(props: SwizzyBackendTemplateWebServiceProps) {
     super({
       ...props,
-      name: "SampleBackendWebService",
+      name: "SwizzyBackendTemplateWebService",
       path: props.path ?? "api",
       packageName: "@swizzyweb/swizzy-backend-template-web-service",
       routerClasses: [
-        FunnyWebRouter,
-        ForecastWebRouter,
-        StatisticsWebRouter,
-        MessageWebRouter,
+        HelloWebRouter,
+
       ],
       middleware: [],
     });

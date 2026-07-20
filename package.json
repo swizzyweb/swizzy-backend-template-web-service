@@ -1,32 +1,34 @@
 {
   "name": "@swizzyweb/swizzy-backend-template-web-service",
-  "version": "0.2.1",
-  "description": "Template for swizzyweb backend web services",
-  "main": "dist/app.js",
+  "version": "0.3.0",
+  "description": "Minimal starting point for swizzyweb backend web services",
+  "keywords": [
+    "api",
+    "backend",
+    "express",
+    "template",
+    "typescript"
+  ],
+  "license": "UNLICENSED",
+  "author": "",
   "type": "module",
-  "author": "Jason Gallagher",
+  "main": "dist/app.js",
   "scripts": {
     "dev": "npm run build && npm run server",
-    "server": "swerve",
+    "server": "swerve --config ./web-service-config.local.json",
     "build:service": "tsc",
     "build": "npm run build:service",
     "test": "tsc -p tsconfig.test.json && node --test ./dist/test/**/*.spec.js"
   },
-  "keywords": [
-    "react",
-    "typescript"
-  ],
-  "license": "MIT",
-  "devDependencies": {
-    "@swizzyweb/swerve": "^0.6.2",
-    "@types/express": "^5.0.6",
-    "@types/supertest": "^7.2.0",
-    "express": "^5.2.1",
-    "supertest": "^7.2.2",
-    "typescript": "^5.8.3"
-  },
   "dependencies": {
     "@swizzyweb/swizzy-common": "^0.3.3",
     "@swizzyweb/swizzy-web-service": "^0.6.1"
+  },
+  "devDependencies": {
+    "@swizzyai/swizzy-web-service-test-framework": "^0.1.0",
+    "@swizzyweb/swerve": "^0.6.2",
+    "@types/express": "^5.0.6",
+    "express": "^5.2.1",
+    "typescript": "^5.8.3"
   }
 }

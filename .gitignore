@@ -1,4 +1,5 @@
 dist
+dist-test
 bundle
 node_modules
 logs

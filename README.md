@@ -1,38 +1,58 @@
 # @swizzyweb/swizzy-backend-template-web-service
 
-This is a sample swizzy backend web service that can be used as the starting point for
-your swizzyweb service.
+Minimal starting point for a swizzyweb backend service. It ships with a single
+example route (`GET /api/hello/world?name=...`) that demonstrates the
+router/controller/middleware pattern — delete it once you've added your own.
 
 ## Web service
 
-The Swizzy web service logic can be found in the src directory.
+The Swizzy web service logic lives in `src/`. Use the `swizzy-ai-skill` MCP
+tools (`create_router`, `create_controller`, `create_middleware`) to extend it
+rather than hand-editing generated files.
 
 ## Running
 
-## Install
+### Install
 
-```npm
+```sh
 npm install
 ```
 
-## Build and run immediately
+### Build and run immediately
 
-```npm
+```sh
 npm run dev
 ```
 
-## Only build
+### Only build
 
-```npm
+```sh
 npm run build
 ```
 
-## Running server after build
+### Running server after build
 
-```npm
+```sh
 npm run server
 ```
 
-## With swerve
+### With swerve
 
-After build you can just run `swerve` in the root directory.
+After building, you can also just run `swerve` in the root directory.
+
+## Testing
+
+```sh
+npm test
+```
+
+Uses `node:test` + `@swizzyai/swizzy-web-service-test-framework`. See
+`test/routers/HelloRouter/controllers/world-controller.spec.ts` for the pattern.
+
+## Docker
+
+```sh
+docker compose up
+```
+
+Builds and runs the service, mapping host port 3705 to container port 3005.
