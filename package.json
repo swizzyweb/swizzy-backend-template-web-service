@@ -9,7 +9,8 @@
     "dev": "npm run build && npm run server",
     "server": "swerve",
     "build:service": "tsc",
-    "build": "npm run build:service"
+    "build": "npm run build:service",
+    "test": "tsc -p tsconfig.test.json && node --test ./dist/test/**/*.spec.js"
   },
   "keywords": [
     "react",
@@ -19,7 +20,9 @@
   "devDependencies": {
     "@swizzyweb/swerve": "^0.6.2",
     "@types/express": "^5.0.6",
+    "@types/supertest": "^7.2.0",
     "express": "^5.2.1",
+    "supertest": "^7.2.2",
     "typescript": "^5.8.3"
   },
   "dependencies": {

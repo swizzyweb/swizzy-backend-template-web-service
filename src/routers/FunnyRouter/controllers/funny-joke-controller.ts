@@ -43,7 +43,7 @@ export class FunnyJokeController extends WebController<
       logger.info("We got a jokster lookin for jokes!");
       try {
         const { funnyJokeClient } = getState()!;
-        const joke = await funnyJokeClient.getFunnyJoke({});
+        const joke = await funnyJokeClient.getFunnyJoke();
         res.json({
           message: "Here's your funny joke",
           joke,

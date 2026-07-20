@@ -8,17 +8,16 @@ import {
   WebRouter,
 } from "@swizzyweb/swizzy-web-service";
 import { SampleBackendWebServiceState } from "../../web-service.js";
-import path from "path";
-// @ts-ignore
-import express from "@swizzyweb/express";
-import { IFunnyJokeClient, IWeatherClient } from "../../client/index.js";
+import { IWeatherClient } from "../../client/index.js";
 import { HourlyForecastController } from "./controllers/hourly-forecast-controller.js";
+
 export interface ForecastRouterState {
   weatherClient: IWeatherClient;
 }
 
 export interface ForecastRouterProps
   extends IWebRouterProps<SampleBackendWebServiceState, ForecastRouterState> {}
+
 export class ForecastWebRouter extends WebRouter<
   SampleBackendWebServiceState,
   ForecastRouterState

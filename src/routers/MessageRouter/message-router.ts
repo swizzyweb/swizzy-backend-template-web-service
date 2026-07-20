@@ -13,7 +13,7 @@ import { GetMessageController } from "./controllers/get-message-controller.js";
 import { DeleteMessageController } from "./controllers/delete-message-controller.js";
 
 export interface MessageRouterState {
-  messageStore: Map<String, String>;
+  messageStore: Map<string, string>;
 }
 
 export interface MessageRouterProps

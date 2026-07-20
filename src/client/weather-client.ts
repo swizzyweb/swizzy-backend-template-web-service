@@ -1,3 +1,5 @@
+const FETCH_TIMEOUT_MS = 5000;
+
 export interface IWeatherClient {
   getHourly(request: { latitude: number; longitude: number }): Promise<any>;
 }
@@ -17,12 +19,18 @@ export class OpenMeteoWeatherClient implements IWeatherClient {
     longitude: number;
   }): Promise<any> {
     const { latitude, longitude } = request;
-    const res = await fetch(
-      `${this.baseUrl}/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m&format=json&timeformat=unixtime`,
-    );
-    if (res.status != 200) {
-      throw Error(`getHourly returned status ${res.status}`);
+    const url = new URL(`${this.baseUrl}/v1/forecast`);
+    url.searchParams.set("latitude", String(latitude));
+    url.searchParams.set("longitude", String(longitude));
+    url.searchParams.set("hourly", "temperature_2m");
+    url.searchParams.set("format", "json");
+    url.searchParams.set("timeformat", "unixtime");
+    const res = await fetch(url, {
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+    });
+    if (!res.ok) {
+      throw new Error(`getHourly returned status ${res.status}`);
     }
-    return await res.json();
+    return res.json();
   }
 }

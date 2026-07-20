@@ -12,7 +12,7 @@ import { MessageRouterState } from "../message-router.js";
 import { Request, Response, NextFunction, json } from "express";
 
 export interface SendMessageControllerState {
-  messageStore: Map<String, String>;
+  messageStore: Map<string, string>;
 }
 
 export interface SendMessageControllerProps
@@ -62,6 +62,8 @@ export class SendMessageController extends WebController<
   }
 }
 
+const MAX_MESSAGE_LENGTH = 4096;
+
 export const SendMessageValidationMiddleware: SwizzyMiddleware<SendMessageControllerState> =
   function (props: SwizzyMiddlewareProps<SendMessageControllerState>) {
     return function (req: Request, res: Response, next: NextFunction) {
@@ -74,6 +76,11 @@ export const SendMessageValidationMiddleware: SwizzyMiddleware<SendMessageContro
       if (typeof message !== "string") {
         res.status(400);
         res.json({ message: `Invalid request` });
+        return;
+      }
+      if (message.length > MAX_MESSAGE_LENGTH) {
+        res.status(400);
+        res.json({ message: `Message exceeds maximum length of ${MAX_MESSAGE_LENGTH} characters` });
         return;
       }
       next();

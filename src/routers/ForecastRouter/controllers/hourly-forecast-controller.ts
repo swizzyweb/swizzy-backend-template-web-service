@@ -42,8 +42,8 @@ export const HourlyForecaseValidationMiddleware: SwizzyMiddleware<HourlyForecast
 
 type HourlyForecastRequest = Request & {
   body: {
-    latitude: string;
-    longitude: string;
+    latitude: number;
+    longitude: number;
   };
 };
 

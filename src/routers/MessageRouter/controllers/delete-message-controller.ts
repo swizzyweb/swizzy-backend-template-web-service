@@ -12,7 +12,7 @@ import { MessageRouterState } from "../message-router.js";
 import { Request, Response, NextFunction } from "express";
 
 export interface DeleteMessageControllerState {
-  messageStore: Map<String, String>;
+  messageStore: Map<string, string>;
 }
 
 export interface DeleteMessageControllerProps
