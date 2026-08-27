@@ -14,7 +14,7 @@ npm test             # Compile + run the test suite (node:test)
 
 Run a single test file:
 ```bash
-npm run build:service && tsc -p tsconfig.test.json && node --test dist/test/routers/HelloRouter/controllers/world-controller.spec.js
+npm run build:service && tsc -p tsconfig.test.json && node --test dist-test/test/routers/HelloRouter/controllers/world-controller.spec.js
 ```
 
 Docker:

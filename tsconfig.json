@@ -16,7 +16,6 @@
     "src" // Include declaration files if any
   ],
   "exclude": [
-    "test",
     "node_modules" // Exclude the node_modules directory
   ]
 }

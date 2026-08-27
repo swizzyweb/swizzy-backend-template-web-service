@@ -18,11 +18,12 @@
     "server": "swerve --config ./web-service-config.local.json",
     "build:service": "tsc",
     "build": "npm run build:service",
-    "test": "tsc -p tsconfig.test.json && node --test ./dist/test/**/*.spec.js"
+    "test": "tsc -p tsconfig.test.json && node --test \"dist-test/test/**/*.spec.js\""
   },
   "dependencies": {
     "@swizzyweb/swizzy-common": "^0.3.3",
-    "@swizzyweb/swizzy-web-service": "^0.6.1"
+    "@swizzyweb/swizzy-web-service": "^0.6.1",
+    "@swizzyweb/swizzy-service-config-gen": "^0.1.0"
   },
   "devDependencies": {
     "@swizzyai/swizzy-web-service-test-framework": "^0.1.0",

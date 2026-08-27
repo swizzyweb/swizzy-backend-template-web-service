@@ -1,5 +1,5 @@
 services:
-  swizzywebsite:
+  app:
     build: .
     ports:
       - 3705:3005
