@@ -22,6 +22,16 @@ Docker:
 docker compose up    # Builds and runs; maps host 3705 → container 3005
 ```
 
+**The container does not use `web-service-config.local.json`.** `entrypoint.sh` runs
+`swizzy-service-config-gen` to build a config from environment variables instead —
+`PORT`/`DEFAULT_PORT` for the listen port, `SERVICES_CONFIG_JSON` (a JSON object of
+`serviceArgs`) for everything else — then starts `swerve` against that generated
+config. This is the same pattern every real deployed service in this platform uses,
+so `wuvable-cdk`-injected config/secrets actually reach the container. Don't revert
+`entrypoint.sh` back to a plain `npm run server` — that would silently ignore any
+config passed at deploy time and just run with `web-service-config.local.json`'s
+static example values instead.
+
 ## Architecture
 
 This service is built on `@swizzyweb/swizzy-web-service`. The framework uses a three-layer hierarchy: **WebService → WebRouter → WebController**, each with its own scoped state slice.

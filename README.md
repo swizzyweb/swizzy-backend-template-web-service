@@ -56,3 +56,12 @@ docker compose up
 ```
 
 Builds and runs the service, mapping host port 3705 to container port 3005.
+
+The container's `entrypoint.sh` does **not** read `web-service-config.local.json`
+(that file is for local dev only, via `npm run server`/`npm run dev`). Instead it
+runs `swizzy-service-config-gen` to build a config from environment variables —
+`PORT`/`DEFAULT_PORT` for the listen port and `SERVICES_CONFIG_JSON` (a JSON object
+of this service's `serviceArgs`) for everything else — then starts `swerve` against
+that generated config. This is the same pattern every real deployed service in this
+platform uses so `wuvable-cdk`-injected config/secrets reach the container; see
+`@swizzyweb/swizzy-service-config-gen`'s own README for the full env var contract.
